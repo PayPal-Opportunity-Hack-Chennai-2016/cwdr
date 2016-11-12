@@ -4,6 +4,7 @@ var IndexModel = require('../models/index');
 var db = require('../lib/db');
 var loginController = require('./login');
 var content = require('../lib/content');
+var user = require('../lib/user');
 
 module.exports = function (router) {
 
@@ -38,7 +39,7 @@ module.exports = function (router) {
     });
 
     router.post('/user', function (req, res) {
-        db.addUser(req, function(error, result) {
+        user.addUser(req, function(error, result) {
             if (error) {
                 res.json(error);
             } else {
@@ -59,7 +60,7 @@ module.exports = function (router) {
         
     });
 
-    router.post('/answer', function (req, res) {
+    router.put('/content', function (req, res) {
         content.updateContent(req, function(err, result){
             if (err) {
                 res.json(err);
@@ -68,16 +69,6 @@ module.exports = function (router) {
             }
         });
         
-    });
-
-    router.post('/comment', function (req, res) {
-        content.updateContent(req, function(err, result){
-            if (err) {
-                res.json(err);
-            } else {
-                res.json(result);
-            }
-        });
     });
 
 };

@@ -12,7 +12,8 @@ exports = module.exports = {
 		var loginPromise = Q.ninvoke(db,'searchUser',req.body.email);
 		loginPromise.then(function(response) {
 			if (response.password && response.password === req.body.password) {
-				var contentPromise = Q.ninvoke(content,'getContentForUser',response);
+				var query = {body: {preferences: response.tags}}
+				var contentPromise = Q.ninvoke(content,'getContentForUser',query);
 				contentPromise.then(function(result) {
 					console.log('got content');
 					callback(null, result);
