@@ -27,7 +27,7 @@ module.exports = function (router) {
         
     });
 
-	router.post('/login', function (req, res) {
+    router.post('/login', function (req, res) {
         loginController.login(req, function(error, result) {
             if (error) {
                 res.json(error);
@@ -53,6 +53,17 @@ module.exports = function (router) {
         content.addContent(req, function(err, result){
             if (err) {
                 res.json(err);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.delete('/content', function (req, res) {
+        db.deleteContent(req, function(error, result) {
+            if (error) {
+                res.json(error);
             } else {
                 res.json(result);
             }
