@@ -1,9 +1,9 @@
 'use strict';
 
 var IndexModel = require('../models/index');
-
 var db = require('../lib/db');
 var loginController = require('./login');
+var content = require('../lib/content');
 
 module.exports = function (router) {
 
@@ -15,14 +15,8 @@ module.exports = function (router) {
         
     });
 
-    // router.get('/getContentForUser', function (req, res) {
-        
-    //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
-    // });
-    
     router.get('/search', function (req, res) {
-        db.search(req, function(error, result) {
+        content.getContent(req, function(error, result) {
             if (error) {
                 res.json(error);
             } else {
@@ -43,7 +37,7 @@ module.exports = function (router) {
         
     });
 
-    router.get('/addUser', function (req, res) {
+    router.post('/user', function (req, res) {
         db.addUser(req, function(error, result) {
             if (error) {
                 res.json(error);
@@ -53,44 +47,37 @@ module.exports = function (router) {
         });
         
     });
-    
- //    router.post('/updateUser', function (req, res) {
-        
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
- //    });
-    
-    router.post('/addQuestion', function (req, res) {
-        
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
-    });
 
- //    router.post('/postComment', function (req, res) {
-        
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
- //    });
-    
- //    router.post('/postBlog', function (req, res) {
-        
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
- //    });
-
-    // Admin Controls
-
-    router.get('/addContent', function (req, res) {
-        db.addContent(req, function(err, result){
-            res.json({status: "Success"});
+    router.post('/content', function (req, res) {
+        content.addContent(req, function(err, result){
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(result);
+            }
         });
         
     });
 
-    // router.post('/postAnswer', function (req, res) {
+    router.post('/answer', function (req, res) {
+        content.updateContent(req, function(err, result){
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(result);
+            }
+        });
         
-    //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
-    // });
+    });
+
+    router.post('/comment', function (req, res) {
+        content.updateContent(req, function(err, result){
+            if (err) {
+                res.json(err);
+            } else {
+                res.json(result);
+            }
+        });
+    });
 
 };

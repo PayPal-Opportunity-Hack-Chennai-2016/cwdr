@@ -9,7 +9,7 @@ exports = module.exports = {
 		if (!req.body.password || !req.body.userName) {
 			callback({error: "User Name or password is not correct"}, null);
 		}
-		var loginPromise = Q.ninvoke(db,'login',req.body.userName);
+		var loginPromise = Q.ninvoke(db,'searchUser',req.body.userName);
 		loginPromise.then(function(response) {
 			if (response.password && response.password === req.body.password) {
 				var contentPromise = Q.ninvoke(db,'getContent',req);
