@@ -1,6 +1,6 @@
 {
 
-    
+    "baseFilePath" : "./files",
 
     
 
@@ -16,7 +16,9 @@
 
     "middleware": {
 
-        
+        "appsec": {
+            "enabled": false
+        },
 
         "static": {
             "module": {
