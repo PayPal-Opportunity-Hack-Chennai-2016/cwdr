@@ -2,6 +2,7 @@
 
 var IndexModel = require('../models/index');
 
+var db = require('../lib/db');
 
 module.exports = function (router) {
 
@@ -13,65 +14,68 @@ module.exports = function (router) {
         
     });
 
-    router.get('/getContentForUser', function (req, res) {
+    // router.get('/getContentForUser', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+    //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
-    router.get('/serach', function (req, res) {
-        
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+    // });
+    
+    router.get('/search', function (req, res) {
+        db.search(req, function(error, result) {
+            res.json(result);
+        });
         
     });
 
-	router.post('/login', function (req, res) {
+	// router.post('/login', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
 
-    router.post('/addUser', function (req, res) {
+ //    router.post('/addUser', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
     
-    router.post('/updateUser', function (req, res) {
+ //    router.post('/updateUser', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
     
-    router.post('/postQuestion', function (req, res) {
+ //    router.post('/postQuestion', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
 
-    router.post('/postComment', function (req, res) {
+ //    router.post('/postComment', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
     
-    router.post('/postBlog', function (req, res) {
+ //    router.post('/postBlog', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+ //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+ //    });
 
     // Admin Controls
 
-    router.post('/addContent', function (req, res) {
-        
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+    router.get('/addContent', function (req, res) {
+        db.addContent(req, function(err, result){
+            res.json({status: "Success"});
+        });
         
     });
 
-    router.post('/postAnswer', function (req, res) {
+    // router.post('/postAnswer', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+    //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+    // });
 
 };
