@@ -1,10 +1,9 @@
 'use strict';
 
 var IndexModel = require('../models/index');
-var db = require('../lib/db');
 var loginController = require('./login');
-var content = require('../lib/content');
-var user = require('../lib/user');
+var content = require('./content');
+var user = require('./user');
 
 module.exports = function (router) {
 
@@ -61,7 +60,7 @@ module.exports = function (router) {
     });
 
     router.delete('/content', function (req, res) {
-        db.deleteContent(req, function(error, result) {
+        content.deleteContent(req, function(error, result) {
             if (error) {
                 res.json(error);
             } else {
@@ -79,7 +78,5 @@ module.exports = function (router) {
                 res.json(result);
             }
         });
-        
     });
-
 };

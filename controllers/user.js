@@ -1,6 +1,6 @@
 'use strict'
 
-var db = require('./db');
+var db = require('../lib/db');
 var content = require('./content');
 var Q = require('q');
 
