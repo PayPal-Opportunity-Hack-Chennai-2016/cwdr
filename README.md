@@ -1,4 +1,4 @@
-# cwdr
-test
-<< Please enter the description about your idea >>
-<< Please enter your team details below >>
+CWDR
+===========
+
+An application for adolescent girls to get information on sexual education, legality and career.
