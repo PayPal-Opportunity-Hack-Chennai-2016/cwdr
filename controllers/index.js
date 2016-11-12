@@ -3,6 +3,7 @@
 var IndexModel = require('../models/index');
 
 var db = require('../lib/db');
+var loginController = require('./login');
 
 module.exports = function (router) {
 
@@ -22,22 +23,36 @@ module.exports = function (router) {
     
     router.get('/search', function (req, res) {
         db.search(req, function(error, result) {
-            res.json(result);
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
         });
         
     });
 
-	// router.post('/login', function (req, res) {
+	router.post('/login', function (req, res) {
+        loginController.login(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
         
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
- //    });
+    });
 
- //    router.post('/addUser', function (req, res) {
+    router.get('/addUser', function (req, res) {
+        db.addUser(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
         
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
- //    });
+    });
     
  //    router.post('/updateUser', function (req, res) {
         
@@ -45,11 +60,11 @@ module.exports = function (router) {
         
  //    });
     
- //    router.post('/postQuestion', function (req, res) {
+    router.post('/addQuestion', function (req, res) {
         
- //        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
- //    });
+    });
 
  //    router.post('/postComment', function (req, res) {
         
