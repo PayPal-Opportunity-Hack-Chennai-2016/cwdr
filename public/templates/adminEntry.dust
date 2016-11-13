@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+	font-family:arial;
+}
+.admin{
+	border:2px solid #0070ba;
+	border-radius:5px;
+	width:60%;
+}
+.admin h1{
+	font-size:16px;
+	font-weight:bold;
+	padding:15px 0;
+	background:#0070ba;
+	color:#fff;
+	text-align:center;
+	margin:0;
+}
+.admin .admin-body{
+	padding:20px;
+	background:#BFDBEE;
+}
+.admin-body label{
+	padding:0 0 10px 0;
+	font-size:12px;
+	font-weight:bold;
+	color:#fff;
+	display:block;
+	margin:0;}
+.admin-body input[type="text"], .admin-body textarea{
+	border:0 none;
+	background:#fff;
+	border-radius:10px;
+	padding:10px;
+	margin:0 0 10px 0;
+	width:100%;
+	font-size:12px;
+	font-family:arial;
+	box-sizing: border-box;
+}
+.admin-body input[type="submit"]{
+	font-size:12px;
+	font-weight:bold;
+	padding:15px;
+	background:#0070ba;
+	color:#fff;
+	text-align:center;
+	border-radius:10px;
+	border:0 none;
+	width:50%;
+	display:block;
+	margin:20px auto;
+}
+</style>
+</head>
+<body>
+<div class="admin">
+	<h1>admin</h1>
+	<div class="admin-body" id="adminView">
+		<form>
+		<label>Question</label>
+		<input type="text" placeholder="Enter text here..."/>
+		<label>Answer</label>
+		<textarea placeholder="Enter text here..."></textarea>
+		<input type="file" />
+		<input type="submit" id="submit" value="Submit"/>
+		</form>
+	</div>
+</div>
+</div>
+</body>
+
+
+<script src="\js\jquery.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#submit').on('click',function(e){
+			console.log("Inside submit call");
+		});
+	});
+</script>
+</html>
