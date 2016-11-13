@@ -87,12 +87,15 @@ public class LoginActiviy extends AppCompatActivity
                                         editor.putString("phone", userDetails.getPhone());
                                         editor.putString("fullName", userDetails.getFullName());
                                         StringBuilder sb = new StringBuilder();
+
+                                        /*StringBuilder sb = new StringBuilder();
+>>>>>>> origin/BlogComment
                                         for (int x = 0; x < userDetails.getTags().size(); x++) {
                                             sb.append(userDetails.getTags().get(x));
                                             if (x < userDetails.getTags().size() - 1)
                                                 sb.append(',');
                                         }
-                                        editor.putString("tags", sb.toString());
+                                        editor.putString("tags", sb.toString());*/
                                     } catch (Exception e) {
                                     }
                                     editor.putBoolean("logged", true);

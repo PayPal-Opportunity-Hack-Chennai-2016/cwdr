@@ -111,7 +111,19 @@ public class QuestionsPage extends Fragment {
             }
         });
 
+        stringRequest.setShouldCache(false);
         AppController.getInstance().addToRequestQueue(stringRequest, "blog");
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        try {
+            getContent();
+        } catch (Exception e) {
+        }
+
+    }
 }

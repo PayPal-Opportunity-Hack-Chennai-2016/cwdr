@@ -124,6 +124,7 @@ public class HotlinesPage extends Fragment {
             }
         });
 
+        stringRequest.setShouldCache(false);
         AppController.getInstance().addToRequestQueue(stringRequest, "hotline");
     }
 
