@@ -1,9 +1,9 @@
 'use strict';
 
 var IndexModel = require('../models/index');
-var db = require('../lib/db');
 var loginController = require('./login');
-var content = require('../lib/content');
+var content = require('./content');
+var user = require('./user');
 
 module.exports = function (router) {
 
@@ -26,7 +26,7 @@ module.exports = function (router) {
         
     });
 
-	router.post('/login', function (req, res) {
+    router.get('/file', function (req, res) {
         loginController.login(req, function(error, result) {
             if (error) {
                 res.json(error);
@@ -37,8 +37,51 @@ module.exports = function (router) {
         
     });
 
+    router.post('/file', function (req, res) {
+        loginController.login(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.post('/login', function (req, res) {
+        loginController.login(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+    });
+
     router.post('/user', function (req, res) {
-        db.addUser(req, function(error, result) {
+        user.addUser(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.put('/user', function (req, res) {
+        user.updateUser(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.get('/user', function (req, res) {
+        user.getUser(req, function(error, result) {
             if (error) {
                 res.json(error);
             } else {
@@ -59,10 +102,10 @@ module.exports = function (router) {
         
     });
 
-    router.post('/answer', function (req, res) {
-        content.updateContent(req, function(err, result){
-            if (err) {
-                res.json(err);
+    router.delete('/content', function (req, res) {
+        content.deleteContent(req, function(error, result) {
+            if (error) {
+                res.json(error);
             } else {
                 res.json(result);
             }
@@ -70,7 +113,7 @@ module.exports = function (router) {
         
     });
 
-    router.post('/comment', function (req, res) {
+    router.put('/content', function (req, res) {
         content.updateContent(req, function(err, result){
             if (err) {
                 res.json(err);
@@ -80,4 +123,11 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/adminLogin', function(req, res){
+        res.render('index');
+    });
+
+    router.get('/adminEntry', function(req, res){
+        res.render('adminEntry');
+    });
 };
