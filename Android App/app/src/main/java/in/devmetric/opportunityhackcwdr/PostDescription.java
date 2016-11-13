@@ -1,5 +1,7 @@
 package in.devmetric.opportunityhackcwdr;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -33,6 +35,8 @@ public class PostDescription extends AppCompatActivity {
     private Button bSubmit;
     private RecyclerView commentList;
     private RecyclerView.LayoutManager layoutManager;
+    private SharedPreferences sharedpreferences;
+    private SharedPreferences.Editor editor;
     private RecyclerView.Adapter adapter;
 
     @Override
@@ -53,7 +57,8 @@ public class PostDescription extends AppCompatActivity {
         commentList.setLayoutManager(layoutManager);
         adapter = new CommentAdapter(searchPojo.getSource().getComments());
         commentList.setAdapter(adapter);
-
+        sharedpreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+        editor = sharedpreferences.edit();
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,7 +91,9 @@ public class PostDescription extends AppCompatActivity {
 
                         map.put("comment", comment);
                         map.put("id", searchPojo.getId());
+                        map.put("email", sharedpreferences.getString("email", ""));
                         map.put("title", searchPojo.getSource().getTitle());
+                        map.put("content", searchPojo.getSource().getDescription());
                         map.put("operation", "comment");
                         return map;
                     }
