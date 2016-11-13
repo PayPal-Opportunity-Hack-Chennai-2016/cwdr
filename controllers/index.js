@@ -1,19 +1,10 @@
 'use strict';
 
-var IndexModel = require('../models/index');
-var loginController = require('./login');
 var content = require('./content');
+var loginController = require('./login');
 var user = require('./user');
 
 module.exports = function (router) {
-
-    var model = new IndexModel();
-
-    router.get('/', function (req, res) {
-        
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
-        
-    });
 
     router.get('/search', function (req, res) {
         content.getContent(req, function(error, result) {
