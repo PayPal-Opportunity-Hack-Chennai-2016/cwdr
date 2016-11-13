@@ -17,6 +17,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import in.devmetric.opportunityhackcwdr.Adapters.SampleCardAdapter;
 import in.devmetric.opportunityhackcwdr.Pojo.SearchPojo;
@@ -50,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         getSearchPojo();
-        adapter = new SampleCardAdapter(SearchActivity.this, searchPojos);
+        adapter = new SampleCardAdapter(SearchActivity.this, searchPojos, "search");
         recyclerView.setAdapter(adapter);
     }
 
@@ -60,12 +61,13 @@ public class SearchActivity extends AppCompatActivity {
             public void onResponse(String response1) {
                 System.out.println(response1 + "");
                 JsonArray response = new JsonParser().parse(response1).getAsJsonArray();
-                Toast.makeText(SearchActivity.this, response.size()+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchActivity.this, response.size() + "", Toast.LENGTH_SHORT).show();
                 for (int i = 0; i < response.size(); i++) {
                     SearchPojo item = new Gson().fromJson(response.get(i).getAsJsonObject().toString(), SearchPojo.class);
                     searchPojos.add(item);
-                    adapter.notifyDataSetChanged();
                 }
+                Collections.reverse(searchPojos);
+                adapter.notifyDataSetChanged();
 
             }
         }, new Response.ErrorListener() {

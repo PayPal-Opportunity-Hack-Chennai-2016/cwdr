@@ -9,7 +9,9 @@ public class AppConfig {
 
     public static final String BASE_URL = "http://192.168.113.64:8000/";
     public static final String LOGIN = BASE_URL + "login";
+    public static final String USER = BASE_URL + "user";
     public static final String SEARCH = BASE_URL + "search?searchText=";
     public static final String CONTENTS = BASE_URL + "search?type=";
     public static final String QUESTION = BASE_URL + "content";
+    public static final String CONTACTS = BASE_URL + "contacts";
 }

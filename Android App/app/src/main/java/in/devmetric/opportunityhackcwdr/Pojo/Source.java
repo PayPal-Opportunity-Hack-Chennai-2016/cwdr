@@ -41,6 +41,30 @@ public class Source implements Serializable {
     @Expose
     private List<Object> comments = new ArrayList<Object>();
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @SerializedName("description")
+    @Expose
+    private String description;
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    @SerializedName("likes")
+    @Expose
+    private int likes;
+
     public String getUrl() {
         return url;
     }
