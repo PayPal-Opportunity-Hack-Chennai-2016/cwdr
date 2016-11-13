@@ -21,13 +21,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import in.devmetric.opportunityhackcwdr.Adapters.SampleCardAdapter;
-import in.devmetric.opportunityhackcwdr.Add_New_Post;
 import in.devmetric.opportunityhackcwdr.AppConfig;
 import in.devmetric.opportunityhackcwdr.AppController;
 import in.devmetric.opportunityhackcwdr.AskQuestionActivity;
-import in.devmetric.opportunityhackcwdr.MainActivity;
 import in.devmetric.opportunityhackcwdr.Pojo.SearchPojo;
 import in.devmetric.opportunityhackcwdr.R;
 
@@ -61,7 +60,7 @@ public class QuestionsPage extends Fragment {
 
         getContent();
         //adapter
-        adapter = new SampleCardAdapter(getContext(), searchPojos);
+        adapter = new SampleCardAdapter(getContext(), searchPojos, "question");
         recyclerView.setAdapter(adapter);
 
 
@@ -87,7 +86,11 @@ public class QuestionsPage extends Fragment {
     }
 
     private void getContent() {
-
+        try {
+            searchPojos.clear();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.CONTENTS + "question", new Response.Listener<String>() {
             @Override
             public void onResponse(String response1) {
@@ -96,8 +99,10 @@ public class QuestionsPage extends Fragment {
                 for (int i = 0; i < response.size(); i++) {
                     SearchPojo item = new Gson().fromJson(response.get(i).getAsJsonObject().toString(), SearchPojo.class);
                     searchPojos.add(item);
-                    adapter.notifyDataSetChanged();
                 }
+                Collections.reverse(searchPojos);
+                adapter.notifyDataSetChanged();
+
             }
         }, new Response.ErrorListener() {
             @Override

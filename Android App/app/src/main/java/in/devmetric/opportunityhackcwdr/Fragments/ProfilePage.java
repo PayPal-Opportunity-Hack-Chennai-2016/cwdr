@@ -13,8 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import in.devmetric.opportunityhackcwdr.MainActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 import in.devmetric.opportunityhackcwdr.ProfileEditActivity;
 import in.devmetric.opportunityhackcwdr.R;
 import in.devmetric.opportunityhackcwdr.WelcomeActivity;
@@ -24,6 +25,9 @@ import in.devmetric.opportunityhackcwdr.WelcomeActivity;
  */
 public class ProfilePage extends Fragment {
 
+    private TextView tvName, tvEmail, tvbio, tvinterest;
+    private CircleImageView image;
+    private View view;
 
     public ProfilePage() {
     }
@@ -32,15 +36,37 @@ public class ProfilePage extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_page, container, false);
+        view = inflater.inflate(R.layout.fragment_profile_page, container, false);
+        return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        tvName = (TextView) view.findViewById(R.id.tvName);
+        tvEmail = (TextView) view.findViewById(R.id.tvEmail);
+        tvbio = (TextView) view.findViewById(R.id.tvBio);
+        tvinterest = (TextView) view.findViewById(R.id.tvInterest);
+        image = (CircleImageView) view.findViewById(R.id.profile_image);
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("login", Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString("email", "default");
+        String fullName = sharedPreferences.getString("fullName", "default");
+        String preferences = sharedPreferences.getString("qualification", "default");
+        String bio = sharedPreferences.getString("ae", "default");
+
+        tvName.setText(fullName);
+        tvEmail.setText(email);
+        tvbio.setText(bio);
+        tvinterest.setText(preferences);
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

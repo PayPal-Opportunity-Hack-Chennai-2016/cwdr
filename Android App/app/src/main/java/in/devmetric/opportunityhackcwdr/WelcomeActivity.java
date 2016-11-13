@@ -22,6 +22,7 @@ public class WelcomeActivity extends AppCompatActivity {
         if (sharedpreferences.getBoolean("logged", false)) {
             //user logged in
             startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            finish();
         }
         bSignUp = (Button) findViewById(R.id.bSignUp);
         bSignIn = (Button) findViewById(R.id.bSignIn);

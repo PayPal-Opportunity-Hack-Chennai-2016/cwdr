@@ -15,22 +15,19 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import in.devmetric.opportunityhackcwdr.Adapters.SampleCardAdapter;
 import in.devmetric.opportunityhackcwdr.Add_New_Post;
 import in.devmetric.opportunityhackcwdr.AppConfig;
 import in.devmetric.opportunityhackcwdr.AppController;
-import in.devmetric.opportunityhackcwdr.MainActivity;
 import in.devmetric.opportunityhackcwdr.Pojo.SearchPojo;
 import in.devmetric.opportunityhackcwdr.R;
 import in.devmetric.opportunityhackcwdr.ViewHolders.MainFeedHolder;
@@ -67,7 +64,7 @@ public class BlogPage extends Fragment {
 
 //        getContent();
         //adapter
-        adapter = new SampleCardAdapter(getContext(), searchPojos);
+        adapter = new SampleCardAdapter(getContext(), searchPojos, "blog");
         mainFeedHolder.recyclerView.setAdapter(adapter);
 
 
@@ -93,7 +90,11 @@ public class BlogPage extends Fragment {
     }
 
     private void getContent() {
-
+        try {
+            searchPojos.clear();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.CONTENTS + "blog", new Response.Listener<String>() {
             @Override
             public void onResponse(String response1) {
@@ -102,8 +103,9 @@ public class BlogPage extends Fragment {
                 for (int i = 0; i < response.size(); i++) {
                     SearchPojo item = new Gson().fromJson(response.get(i).getAsJsonObject().toString(), SearchPojo.class);
                     searchPojos.add(item);
-                    adapter.notifyDataSetChanged();
                 }
+                Collections.reverse(searchPojos);
+                adapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
             @Override

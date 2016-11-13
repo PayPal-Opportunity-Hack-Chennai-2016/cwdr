@@ -31,6 +31,8 @@ exports = module.exports = {
 	},
 
 	updateUser: function addUser(req, callback) {
+		console.log('update User Request');
+		console.log(req.body);
 		if (!req.body.email) {
 			callback({error: "Email not present in the request"}, null);
 			return;
@@ -55,6 +57,7 @@ exports = module.exports = {
         	};
 			var updatePromise = Q.ninvoke(db, 'addUser', data);
 			updatePromise.then(function(response) {
+				console.log('user updated successfully');
 				callback(null, response);
 			}).catch(function(err) {
 				console.log(err);

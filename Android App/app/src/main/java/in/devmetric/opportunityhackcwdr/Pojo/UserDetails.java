@@ -15,6 +15,9 @@ public class UserDetails {
     @SerializedName("fullName")
     @Expose
     private String fullName;
+    @SerializedName("address")
+    @Expose
+    private String address;
     @SerializedName("age")
     @Expose
     private String age;
@@ -108,6 +111,7 @@ public class UserDetails {
         return tags;
     }
 
+
     /**
      * @param tags The tags
      */
@@ -115,4 +119,12 @@ public class UserDetails {
         this.tags = tags;
     }
 
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

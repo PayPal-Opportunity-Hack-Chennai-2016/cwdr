@@ -5,6 +5,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
+import android.util.Base64;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,24 +16,26 @@ import java.net.URL;
 public class ImageGetter implements Html.ImageGetter {
 
     public Drawable getDrawable(String source) {
-        Drawable d = new BitmapDrawable(getBitmapFromURL(source));
-        d.setBounds(0,0,d.getIntrinsicWidth(),d.getIntrinsicHeight());
-        return d;
+        Log.d("Source", source);
+        if (source.startsWith(""))
+//        if (!source.startsWith("http")) source = "http://" + source;
+        source.replace("data:image/png;base64,", "");
+        byte[] item = Base64.decode(source, Base64.DEFAULT);
+
+        Bitmap bmp = BitmapFactory.decodeByteArray(item, 0, item.length);
+
+        Drawable drawable = new BitmapDrawable(bmp);
+        return drawable;
     }
 
-    public Bitmap getBitmapFromURL(String src) {
-        try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+    public static Drawable drawableFromUrl(String url) throws IOException {
+        Bitmap x;
 
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.connect();
+        InputStream input = connection.getInputStream();
+
+        x = BitmapFactory.decodeStream(input);
+        return new BitmapDrawable(x);
+    }
 };

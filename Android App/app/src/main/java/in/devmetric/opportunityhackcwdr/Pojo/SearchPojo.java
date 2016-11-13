@@ -4,7 +4,9 @@ package in.devmetric.opportunityhackcwdr.Pojo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SearchPojo {
+import java.io.Serializable;
+
+public class SearchPojo implements Serializable{
 
     @SerializedName("index")
     @Expose
