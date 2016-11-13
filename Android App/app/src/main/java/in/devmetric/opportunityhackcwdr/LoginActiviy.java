@@ -85,6 +85,7 @@ public class LoginActiviy extends AppCompatActivity
                                         editor.putString("age", userDetails.getAge());
                                         editor.putString("qualification", userDetails.getQualification());
                                         editor.putString("phone", userDetails.getPhone());
+                                        editor.putString("fullName", userDetails.getFullName());
                                         StringBuilder sb = new StringBuilder();
                                         for (int x = 0; x < userDetails.getTags().size(); x++) {
                                             sb.append(userDetails.getTags().get(x));
@@ -98,6 +99,12 @@ public class LoginActiviy extends AppCompatActivity
                                     editor.commit();
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                                     finish();
+                                } else {
+                                    try {
+                                        Toast.makeText(LoginActiviy.this, jsonObject.get("error").getAsString() + "", Toast.LENGTH_SHORT).show();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
                                 }
                             } catch (JsonSyntaxException e) {
                                 e.printStackTrace();
