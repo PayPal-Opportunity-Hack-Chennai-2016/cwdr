@@ -1,25 +1,24 @@
 'use strict';
 
 var db = require('../lib/db');
-var content = require('../lib/content');
 var Q = require('q');
 
 exports = module.exports = {
 	login: function login(req, callback) {
-		if (!req.body.password || !req.body.userName) {
+		if (!req.body.password || !req.body.email) {
 			callback({error: "User Name or password is not correct"}, null);
 		}
-		var loginPromise = Q.ninvoke(db,'searchUser',req.body.userName);
+		var loginPromise = Q.ninvoke(db,'searchUser',req.body.email);
 		loginPromise.then(function(response) {
 			if (response.password && response.password === req.body.password) {
-				var contentPromise = Q.ninvoke(db,'getContent',req);
-				contentPromise.then(function(response) {
-					console.log('got content');
-					callback(null, response);
-
-				}).catch(function(err) {
-					callback({error: "Not able to get the content"}, null);
-				});
+				var data = {fullName: response.fullName,
+							address: response.address,
+							age: response.age,
+							qualification: response.qualification,
+							email: response.email,
+							phone: response.phone,
+							tags: response.tags};
+				callback(null, data);
 			} else {
 				callback({error: "User Name or password is not correct"}, null);
 			}
