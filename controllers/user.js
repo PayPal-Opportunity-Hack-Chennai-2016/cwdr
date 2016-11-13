@@ -9,6 +9,12 @@ exports = module.exports = {
 		var currentTime = new Date().getTime();
 		req.body.timeCreated = currentTime;
 		req.body.timeLastUpdated = currentTime;
+
+		if (!req.body.password || !req.body.email) {
+			callback({error: "User Name or password is not present in the request"}, null);
+			return;
+		}
+
 		var userPromise = Q.ninvoke(db, 'addUser', req);
 		userPromise.then(function(response){
 			var contentPromise = Q.ninvoke(content, 'getContentForUser', req);
@@ -67,6 +73,7 @@ exports = module.exports = {
 		}
 		var userPromise = Q.ninvoke(db,'searchUser',req.query.email);
 		userPromise.then(function(response) {
+			console.log(response);
 			var data = {fullName: response.fullName,
 						address: response.address,
 						age: response.age,
