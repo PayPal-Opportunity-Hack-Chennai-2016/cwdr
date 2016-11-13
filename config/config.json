@@ -2,7 +2,32 @@
 
     "baseFilePath" : "./files",
 
-    
+    "express": {
+        "view engine": "js",
+        "view cache": false,
+        "views": "path:./.build/templates"
+    },
+
+    "view engines": {
+        "js": {
+            "module": "engine-munger",
+            "renderer": {
+                "method": "js",
+                "arguments": [{
+                    "cache": true,
+                    "helpers": [
+                        "ppdustjs-filters-secure",
+                        "dustjs-helpers",
+                        "dusthelpers-supplement"
+                    ]
+                }, {
+                    "views": "config:express.views",
+                    "view engine": "config:express.view engine",
+                    "i18n": "config:i18n"
+                }]
+            }
+        }
+    },    
 
     
     "i18n": {

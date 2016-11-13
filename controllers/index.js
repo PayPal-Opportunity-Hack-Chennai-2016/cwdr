@@ -34,7 +34,6 @@ module.exports = function (router) {
                 res.json(result);
             }
         });
-        
     });
 
     router.post('/user', function (req, res) {
@@ -80,4 +79,11 @@ module.exports = function (router) {
         });
     });
 
+    router.get('/adminLogin', function(req, res){
+        res.render('index');
+    });
+
+    router.get('/adminEntry', function(req, res){
+        res.render('adminEntry');
+    });
 };

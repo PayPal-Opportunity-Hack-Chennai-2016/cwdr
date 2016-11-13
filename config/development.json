@@ -1,5 +1,34 @@
 {
     
+    "express": {
+        "view engine": "dust",
+        "view cache": false,
+        "views": "path:./public/templates"
+    },
+
+
+    "view engines": {
+        "dust": {
+            "module": "engine-munger",
+            "renderer": {
+                "method": "dust",
+                "arguments": [{
+                    "cache": false,
+                    "helpers": [
+                        "ppdustjs-filters-secure",
+                        "dustjs-helpers",
+                        "dusthelpers-supplement"
+                    ]
+                }, {
+//INFO: Uncomment the following line to trigger pisces
+//                  "enableMetadata": true,
+                    "views": "config:express.views",
+                    "view engine": "config:express.view engine",
+                    "i18n": "config:i18n"
+                }]
+            }
+        }
+    },
 
     "middleware": {
 
