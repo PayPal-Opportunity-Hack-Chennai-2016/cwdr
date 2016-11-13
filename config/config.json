@@ -1,7 +1,6 @@
 {
 
     "baseFilePath" : "./files",
-<<<<<<< HEAD
 
     "express": {
         "view engine": "js",
@@ -30,13 +29,11 @@
         }
     },    
 
-=======
     "smsConfig": {"authKey": "130948ApvWcn7m28l8582790ac",
         "senderId": "CWDR-Updates",
         "route": 1,
         "dialCode": 91
     },
->>>>>>> sandeep/master
     
     "i18n": {
         "contentPath": "path:./locales",
