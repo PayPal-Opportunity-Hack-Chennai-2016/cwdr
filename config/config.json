@@ -8,6 +8,11 @@
         "views": "path:./.build/templates"
     },
 
+    "contacts": [{"name": "Satyam Rai", "phone": "9591445633", "location": "Coiambatore"},
+                 {"name": "Abhijit Das", "phone": "9867536211", "location": "Delhi"},
+                 {"name": "Kiran", "phone": "9591480346", "location": "chennai"},
+                 {"name": "Suman", "phone": "9677889011", "location": "Bangalore"}],
+    
     "view engines": {
         "js": {
             "module": "engine-munger",
@@ -31,7 +36,7 @@
 
     "smsConfig": {"authKey": "130948ApvWcn7m28l8582790ac",
         "senderId": "CWDR-Updates",
-        "route": 4,
+        "route": 1,
         "dialCode": 91
     },
     

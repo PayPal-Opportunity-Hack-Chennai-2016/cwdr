@@ -73,7 +73,7 @@ exports = module.exports = {
 			}
 			var data = {
 						id: req.body.id,
-						tags: req.body.tags,
+						tags: req.body.tags || record.tags,
 						content: req.body.content,
 						lastUpdatedBy: req.body.email,
 						timeLastUpdated: new Date().getTime(),
