@@ -69,6 +69,28 @@ module.exports = function (router) {
         
     });
 
+    router.put('/user', function (req, res) {
+        user.addUser(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.get('/user', function (req, res) {
+        user.getUser(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
     router.post('/content', function (req, res) {
         content.addContent(req, function(err, result){
             if (err) {

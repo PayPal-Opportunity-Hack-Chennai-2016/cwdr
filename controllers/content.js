@@ -2,6 +2,7 @@
 
 var db = require('../lib/db');
 var Q = require('q');
+var notification = require('./notification');
 
 exports = module.exports = {
 	getContentForUser: function getContent(req, callback) {
@@ -91,14 +92,40 @@ exports = module.exports = {
 			updatePromise.then(function(response){
 				console.log('content updated');
 				var res = {status: "Success", "Message": "Content updated successfully"};
-				callback(null,res);
+				if (operation === 'answer') {
+					var userPromise = Q.ninvoke(db, 'searchUser', data.createdBy);
+					userPromise.then(function(user) {
+						console.log('got user data');
+						req.phoneNumber = user.phone;
+						req.messageContent = 'Your question: ' + data.title + ' has been answered, Please check.';
+						console.log('calling send sms');
+						var smsPromise = Q.ninvoke(notification, 'sendSMS', req);
+						smsPromise.then(function(result) {
+							console.log('sms sent successfully');
+							callback(null, res);
+							return;
+						}).catch(function(err) {
+							console.log(err);
+							callback(null, res);
+							return;
+						});
+					}).catch(function(err) {
+						console.log(err);
+						callback(null, res);
+						return;
+					});
+				} else {
+					callback(null,res);
+				}
 			}).catch(function(err) {
 				console.log(err);
 				callback({error: "Unable to update content"}, null);
+				return;
 			});
 		}).catch(function(err) {
 			console.log(err);
 			callback({error: "Unable to update content"}, null);
+			return;
 		});
 
 	},
