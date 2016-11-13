@@ -20,8 +20,6 @@
                         "dusthelpers-supplement"
                     ]
                 }, {
-//INFO: Uncomment the following line to trigger pisces
-//                  "enableMetadata": true,
                     "views": "config:express.views",
                     "view engine": "config:express.view engine",
                     "i18n": "config:i18n"
