@@ -26,6 +26,28 @@ module.exports = function (router) {
         
     });
 
+    router.get('/file', function (req, res) {
+        loginController.login(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
+    router.post('/file', function (req, res) {
+        loginController.login(req, function(error, result) {
+            if (error) {
+                res.json(error);
+            } else {
+                res.json(result);
+            }
+        });
+        
+    });
+
     router.post('/login', function (req, res) {
         loginController.login(req, function(error, result) {
             if (error) {

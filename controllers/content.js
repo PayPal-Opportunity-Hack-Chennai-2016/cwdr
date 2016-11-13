@@ -87,6 +87,7 @@ exports = module.exports = {
 			var updatePromise = Q.ninvoke(db, 'updateContent', data);
 			
 			updatePromise.then(function(response){
+				console.log('content updated');
 				var res = {status: "Success", "Message": "Content updated successfully"};
 				callback(null,res);
 			}).catch(function(err) {
@@ -97,17 +98,6 @@ exports = module.exports = {
 			console.log(err);
 			callback({error: "Unable to update content"}, null);
 		});
-	},
 
-	deleteContent: function deleteContent(req, callback) {
-		var contentPromise = Q.ninvoke(db, 'deleteContent', req);
-		contentPromise.then(function(response){
-			callback(null, response);
-		}).catch(function(err) {
-			console.log(err);
-			callback({error: "Unable to delete content"}, null);
-		});
 	}
-
-
 }
