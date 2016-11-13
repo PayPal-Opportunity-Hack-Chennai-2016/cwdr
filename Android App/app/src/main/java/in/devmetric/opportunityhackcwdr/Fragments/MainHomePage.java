@@ -125,4 +125,13 @@ public class MainHomePage extends Fragment {
         AppController.getInstance().addToRequestQueue(stringRequest, "home");
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        try {
+            getContent();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

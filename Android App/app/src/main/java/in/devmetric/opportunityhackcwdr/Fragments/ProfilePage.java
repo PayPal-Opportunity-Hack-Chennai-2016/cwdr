@@ -60,7 +60,7 @@ public class ProfilePage extends Fragment {
         String email = sharedPreferences.getString("email", "default");
         String fullName = sharedPreferences.getString("fullName", "default");
         String preferences = sharedPreferences.getString("qualification", "default");
-        String bio = sharedPreferences.getString("ae", "default");
+        String bio = sharedPreferences.getString("ae", "Not Set");
 
         tvName.setText(fullName);
         tvEmail.setText(email);

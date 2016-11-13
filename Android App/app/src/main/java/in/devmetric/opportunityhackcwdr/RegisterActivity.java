@@ -1,6 +1,8 @@
 package in.devmetric.opportunityhackcwdr;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -102,6 +104,14 @@ public class RegisterActivity extends AppCompatActivity {
                                     String sage = age.getText().toString();
                                     String spreferences = preferences.getText().toString();
                                     String squalification = qualification.getText().toString();
+
+                                    SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                    editor.putString("fullName", sname);
+                                    editor.putString("qualification", spreferences);
+                                    editor.putString("email", semail);
+                                    editor.putString("age", sage);
 
                                     params.put("fullName", sname);
                                     params.put("preferences", spreferences);
