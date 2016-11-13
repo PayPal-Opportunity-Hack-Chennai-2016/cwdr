@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{
+	font-family:arial;
+}
+.login{
+	border:2px solid #0070ba;
+	border-radius:5px;
+	width:50%;
+}
+.login h1{
+	font-size:16px;
+	font-weight:bold;
+	padding:15px 0;
+	background:#0070ba;
+	color:#fff;
+	text-align:center;
+	margin:0;
+}
+.login .login-body{
+	padding:20px;
+	background:#BFDBEE;
+}
+.login-body label{
+	padding:0 0 10px 0;
+	font-size:12px;
+	font-weight:bold;
+	color:#fff;
+	display:block;
+	margin:0;}
+.login-body input[type="text"], .login-body textarea{
+	border:0 none;
+	background:#fff;
+	border-radius:10px;
+	padding:10px;
+	margin:0 0 10px 0;
+	width:100%;
+	font-size:12px;
+	font-family:arial;
+	box-sizing: border-box;
+}
+.login-body input[type="submit"]{
+	font-size:12px;
+	font-weight:bold;
+	padding:15px;
+	background:#0070ba;
+	color:#fff;
+	text-align:center;
+	border-radius:10px;
+	border:0 none;
+	width:50%;
+	display:block;
+	margin:20px auto;
+}
+</style>
+</head>
+<body>
+<div class="login">
+	<h1>Login</h1>
+	<div class="login-body">
+		<form>
+		<label>Email</label>
+		<input type="text" placeholder="Enter Email."/>
+		<label>Password</label>
+		<input type="text" placeholder="Enter Password."/>
+		<input type="submit" id='#submit' value="Submit"/>
+		</form>
+	</div>
+</div>
+</div>
+</body>
+</html>
