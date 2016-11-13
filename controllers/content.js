@@ -35,6 +35,7 @@ exports = module.exports = {
 					tags: req.body.tags,
 					timeCreated: currentTime,
 					content: req.body.content,
+					url: req.body.url,
 					type: req.body.type,
 					timeLastUpdated: currentTime,
 					lastUpdatedBy: req.body.email,
@@ -81,7 +82,8 @@ exports = module.exports = {
 						timeCreated: record.timeCreated,
 						likes: likes,
 						title: record.title,
-						description: req.body.description || record.description || record.title
+						description: req.body.description || record.description || record.title,
+						url: req.body.url || record.url
 						};
 			
 			var updatePromise = Q.ninvoke(db, 'updateContent', data);
@@ -99,5 +101,15 @@ exports = module.exports = {
 			callback({error: "Unable to update content"}, null);
 		});
 
-	}
+	},
+
+	deleteContent: function deleteContent(req, callback) {
+		var deletePromise = Q.ninvoke(db, 'deleteContent', req);
+		deletePromise.then(function(response){
+			callback(null, response);
+		}).catch(function(err) {
+			console.log(err);
+			callback({error: "Unable to delete content"}, null);
+		});
+	},
 }

@@ -5,8 +5,11 @@ var Q = require('q');
 
 exports = module.exports = {
 	login: function login(req, callback) {
+		console.log('printing req body');
+		console.log(req.body);
 		if (!req.body.password || !req.body.email) {
 			callback({error: "User Name or password is not correct"}, null);
+			return;
 		}
 		var loginPromise = Q.ninvoke(db,'searchUser',req.body.email);
 		loginPromise.then(function(response) {
@@ -18,6 +21,7 @@ exports = module.exports = {
 							email: response.email,
 							phone: response.phone,
 							tags: response.tags};
+				console.log('login success. sending user data');			
 				callback(null, data);
 			} else {
 				callback({error: "User Name or password is not correct"}, null);

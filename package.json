@@ -11,17 +11,24 @@
     "postinstall": "grunt postinstall"
   },
   "dependencies": {
+    "adaro": "^0.1.5",
+    "dustjs-linkedin": "~2.6.0",
+    "dustjs-helpers":"~1.6.0",
+    "dusthelpers-supplement":"~0.0.4",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-less": "^1.0.0",
     "elasticsearch": "^12.0.1",
+    "engine-munger": "^0.2",
     "eslint": "^1.10.3",
     "express": "^4.12.2",
     "kraken-js": "^2.0.0",
     "msg91-sms": "^1.0.1",
+    "ppdustjs-filters-secure":"~0.0.2",
     "q": "^1.1.2",
     "requirejs": "^2.3.2"
   },
+
   "devDependencies": {
     "adaro": "^0.1.5",
     "ppdustjs-filters-secure":"~0.0.2",
