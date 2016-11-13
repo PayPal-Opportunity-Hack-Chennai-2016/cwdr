@@ -1,6 +1,6 @@
 'use strict';
 
-var fs = require(fs);
+var fs = require('fs');
 var Q = require('q');
 var MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 
@@ -8,7 +8,7 @@ function isFileValid(file) {
 	return file.size < MAX_FILE_SIZE;
 }
 
-export = module.exports = {
+exports = module.exports = {
 
 	storeFile: function storeFile(req, callback) {
 		var file = req.body.file;
