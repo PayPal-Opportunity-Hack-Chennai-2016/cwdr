@@ -1,17 +1,31 @@
 package in.devmetric.opportunityhackcwdr;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
+
 /**
  * Created by Satyam on 12/11/2016.
  */
 
-public class Hotline {
-    String name;
-    String number;
-    String location;
+public class Hotline implements Serializable {
 
-    public Hotline(String name, String number, String location) {
+    @SerializedName("name")
+    @Expose
+    private String name;
+
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+
+    @SerializedName("location")
+    @Expose
+    private String location;
+
+    public Hotline(String name, String phone, String location) {
         this.name = name;
-        this.number = number;
+        this.phone = phone;
         this.location = location;
     }
 
@@ -23,12 +37,12 @@ public class Hotline {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getphone() {
+        return phone;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setphone(String phone) {
+        this.phone = phone;
     }
 
     public String getLocation() {

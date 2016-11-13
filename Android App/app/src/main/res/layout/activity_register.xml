@@ -41,9 +41,9 @@
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/preferences"
             android:layout_gravity="center_horizontal"
-            android:hint="Postal Address" />
+            android:hint="Preferences" />
 
         <EditText
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/email"
-            android:hint="email" />
+            android:hint="Email" />
 
         <EditText
             android:layout_width="match_parent"
@@ -68,6 +68,20 @@
             android:ems="10"
             android:id="@+id/password1"
             android:hint="Password" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/age"
+            android:hint="Age" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/qualification"
+            android:hint="Qualification" />
 
         <CheckBox
             android:layout_width="175dp"
@@ -81,7 +95,8 @@
             android:layout_height="wrap_content"
             android:text="Register"
             android:id="@+id/register"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:enabled="false" />
 
 
 

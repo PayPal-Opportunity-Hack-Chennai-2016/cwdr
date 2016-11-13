@@ -42,13 +42,14 @@
                     android:text="Satyam Rai"
                     android:textColor="@color/dark"
                     android:layout_above="@+id/email"
+                    android:id="@+id/tvName"
                     android:textSize="20dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="satyam123.sr@gmail.com"
-                    android:id="@+id/email"
+                    android:id="@+id/tvEmail"
                     android:layout_alignParentBottom="true"
                     android:textSize="15dp"/>
             </RelativeLayout>
@@ -83,6 +84,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tvBio"
                     android:text="Reading, Dancing, Singing, bla vblalajsdfljalskjdflkajsdlfjlaskdjflsjadfljsa;lkfjlsadjfl;kasjdf;ljas;ldfja;slkdfj; "
                     android:layout_weight=".25"
                     android:textSize="16sp" />
@@ -109,6 +111,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tvInterest"
                     android:text="Reading, Dancing, Singing, bla vblalajsdfljalskjdflkajsdlfjlaskdjflsjadfljsa;lkfjlsadjfl;kasjdf;ljas;ldfja;slkdfj; "
                     android:layout_weight=".25"
                     android:textSize="16sp" />

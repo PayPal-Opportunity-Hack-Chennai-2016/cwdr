@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_b1a3084d7497a939ebaace0198d03a29e176ec64/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="bc48f902a52db567ddf8753ecaaf4274cdd550c1">
+        sha1="bd6ee0e3c054c88da4bd2b088d436ca9bd4024fe">
         <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_9dbb7b4eeaa6c5291595d8a0c7c01272a0af6f1b/classes.dex" />
     </item>
     <item
@@ -39,12 +48,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_d664025de7edcbd9aaf5b60d2ead6b8121bb98e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
         <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_5dede3a2db44b542513aaf2a76868eed53d892ba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_bfbe6faf6911c435c6b5f2be6889ea89e74c5bca/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -93,6 +120,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_976c2bdccecdd28d2a68ffd8b013295bdd223567/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -126,6 +162,24 @@
         revision="24.0.3"
         sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
         <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_2b942fef5255be3e0fae2a846bad36e867044708/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Avi/Documents/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_c94627c2917d652df8dbf04e2e71109e5e9c81df/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_3c9c50664b60bc0f9319920db3151054a360da10/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -174,65 +228,11 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_b1a3084d7497a939ebaace0198d03a29e176ec64/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_d664025de7edcbd9aaf5b60d2ead6b8121bb98e0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_bfbe6faf6911c435c6b5f2be6889ea89e74c5bca/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_976c2bdccecdd28d2a68ffd8b013295bdd223567/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Avi/Documents/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_c94627c2917d652df8dbf04e2e71109e5e9c81df/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_3c9c50664b60bc0f9319920db3151054a360da10/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="acdba7925b6cf3cf862244a06323b78a3d75a4fd">
+        sha1="097e67a3b8aa37a601443d323583c264622d4066">
         <dex dex="/Users/Avi/GitHub/OpportunityHack2k16/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b3aeffb443f97f02950535d514b65bf9b788725f/classes.dex" />
     </item>
     <item
