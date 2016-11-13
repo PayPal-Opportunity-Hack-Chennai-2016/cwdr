@@ -70,7 +70,7 @@ module.exports = function (router) {
     });
 
     router.put('/user', function (req, res) {
-        user.addUser(req, function(error, result) {
+        user.updateUser(req, function(error, result) {
             if (error) {
                 res.json(error);
             } else {
