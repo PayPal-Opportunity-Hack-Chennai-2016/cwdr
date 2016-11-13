@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+
+        id="@+id/tab_home"
+        title="Home" />
+    <tab
+
+        id="@+id/tab_blog"
+        title="Blog" />
+    <tab
+
+        id="@+id/tab_questions"
+        title="Questions" />
+    <tab
+
+        id="@+id/tab_hotlines"
+        title="Hotlines" />
+    <tab
+
+        id="@+id/tab_profile"
+        title="Profile" />
+</tabs>
