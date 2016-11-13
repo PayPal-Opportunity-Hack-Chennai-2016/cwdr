@@ -130,4 +130,9 @@ module.exports = function (router) {
     router.get('/adminEntry', function(req, res){
         res.render('adminEntry');
     });
+
+    router.get('/contacts', function (req, res) {
+        var contactData = req.app.kraken.get('contacts');
+        res.json(contactData);
+    });
 };

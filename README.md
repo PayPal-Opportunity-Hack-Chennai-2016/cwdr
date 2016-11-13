@@ -31,6 +31,19 @@ Md Sherrif
 https://www.getpostman.com/collections/880b12c9733ecd5f9435
 
 
+### Functionality Supported
+Create Profile
+Update Profile
+Create Content
+Ask a Question
+Create a blog
+Like a Question/Blog/Content
+Answer a question
+Comments
+
+Delete a content
+
+
 
 
 
