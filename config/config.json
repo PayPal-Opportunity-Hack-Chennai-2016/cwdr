@@ -31,7 +31,7 @@
 
     "smsConfig": {"authKey": "130948ApvWcn7m28l8582790ac",
         "senderId": "CWDR-Updates",
-        "route": 4,
+        "route": 1,
         "dialCode": 91
     },
     

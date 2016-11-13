@@ -22,9 +22,9 @@ Md Sherrif
 
 ### Nodejs Server Setup:
 
-git clone https://github.com/PayPal-Opportunity-Hack-Chennai-2016/cwdr 
-npm install
-npm start
+1. git clone https://github.com/PayPal-Opportunity-Hack-Chennai-2016/cwdr 
+2. npm install
+3. npm start
 
 
 ### Admin User Access through postman:

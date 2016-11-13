@@ -15,19 +15,23 @@ exports = module.exports = {
 		loginPromise.then(function(response) {
 			if (response.password && response.password === req.body.password) {
 				var data = {fullName: response.fullName,
-							address: response.address,
+							address: response.address || "",
 							age: response.age,
 							qualification: response.qualification,
 							email: response.email,
 							phone: response.phone,
 							tags: response.tags};
-				console.log('login success. sending user data');			
+				console.log('login success. sending user data');
+				console.log(data);			
 				callback(null, data);
+				return;
 			} else {
 				callback({error: "User Name or password is not correct"}, null);
+				return;
 			}
 		}).catch(function(err) {
 			callback({error: "User Name or password is not correct"}, null);
+			return;
 		});
 	}
 }
